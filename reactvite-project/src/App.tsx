@@ -1,27 +1,13 @@
-
+import ListGroup from "./components/ListGroup";
 
 function App() {
-  let items = [
-    'New York',
-    'San Francisco',
-    'Tokyo',
-    'London',
-    'Paris'
-  ];
-
-  items = [];
+  let items = ['New York','San Francisco','Tokyo','London','Paris'];
 
   return (
-    <>
-      <h1>List</h1>
-
-      { items.length == 0 && <p>No item found</p> }
-
-      <ul className="list-group">
-        {items.map(item => <li key={item} >{item}</li>)}
-      </ul>
-    </>
+    <div><ListGroup items={items} heading="Cities"/></div>
   );
 }
+
+//APPLY BOOTSTRAP CLASS TO ITEMS
 
 export default App;   
