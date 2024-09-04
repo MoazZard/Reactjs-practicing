@@ -1,6 +1,6 @@
-import Alert from "./components/Alert";
-import ListGroup from "./components/ListGroup";
+import { useState } from "react";
 import Button from "./components/Button";
+import Alert from "./components/Alert";
 
 // Props: INPUT PASSED TO A COMPONENT, Immutable: READ ONLY
 // State: DATA MANAGED BY A COMPONENT, Mutable: THIS COMP HAS DATA THAT CHANGES
@@ -8,24 +8,12 @@ import Button from "./components/Button";
 
 
 function App() {
-  let items = ['New York', 'San Francisco', 'Tokyo', 'London', 'Paris'];
-
-  const handleSelectItem = (item: string) => { // using props to pass functions into subcomponents
-    console.log(item);
-  }
+  const [alertVisible, setAlertVisibility] = useState(false);
 
   return (
     <>
-      <div><ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} /></div>
-      {/* List^ - prop passing */}
-
-      <div>
-        <Alert>
-          <span>This is passed as ReactNode type</span>
-        </Alert>
-      </div> {/* ALERT - child passing */}
-
-      <div><Button /></div> {/* Button base class */}
+      {alertVisible && <Alert onClose={() => setAlertVisibility(false)}>My alert</Alert>}
+      <Button onClick={() => setAlertVisibility(true)} />
     </>
   );
 }

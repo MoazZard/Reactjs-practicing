@@ -1,13 +1,20 @@
 import { ReactNode } from "react";
+import { useState } from "react";
 
 interface Props {
     children: ReactNode;
+    onClose: () => void;
 }
 
-function Alert({children}: Props) {
+function Alert({ children, onClose }: Props) {
 
     return (
-        <div className="alert alert-primary">{children}</div>
+        <div className="alert alert-warning alert-dismissible fade show" role="alert">
+
+            <strong>{children}</strong>
+
+            <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close" onClick={onClose}></button>
+        </div>
     );
 }
 
