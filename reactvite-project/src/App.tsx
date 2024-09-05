@@ -4,7 +4,7 @@ import Alert from "./components/Alert";
 
 // Props: INPUT PASSED TO A COMPONENT, Immutable: READ ONLY
 // State: DATA MANAGED BY A COMPONENT, Mutable: THIS COMP HAS DATA THAT CHANGES
-// Anytime they change, react re-renders component and updates dom
+// Anytime they change, react re-renders component and updates the DOM
 
 
 function App() {
