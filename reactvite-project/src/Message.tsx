@@ -1,4 +1,4 @@
-const name = "Nigeria";
+const name = "Nigerian";
 
 function Message() {
     return <h1>Hello {name}</h1>;
