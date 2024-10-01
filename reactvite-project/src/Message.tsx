@@ -1,4 +1,4 @@
-const name = "Nigerians are cooler";
+const name = "Nigerians are coolerer";
 
 function Message() {
     return null;
